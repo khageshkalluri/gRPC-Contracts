@@ -46,6 +46,68 @@ public final class PaymentServiceGrpc {
     return getProcessPaymentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.ecomm.grpc.payment.paymentStatusRequest,
+      com.ecomm.grpc.payment.paymentStatusResponse> getGetPaymentStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getPaymentStatus",
+      requestType = com.ecomm.grpc.payment.paymentStatusRequest.class,
+      responseType = com.ecomm.grpc.payment.paymentStatusResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.ecomm.grpc.payment.paymentStatusRequest,
+      com.ecomm.grpc.payment.paymentStatusResponse> getGetPaymentStatusMethod() {
+    io.grpc.MethodDescriptor<com.ecomm.grpc.payment.paymentStatusRequest, com.ecomm.grpc.payment.paymentStatusResponse> getGetPaymentStatusMethod;
+    if ((getGetPaymentStatusMethod = PaymentServiceGrpc.getGetPaymentStatusMethod) == null) {
+      synchronized (PaymentServiceGrpc.class) {
+        if ((getGetPaymentStatusMethod = PaymentServiceGrpc.getGetPaymentStatusMethod) == null) {
+          PaymentServiceGrpc.getGetPaymentStatusMethod = getGetPaymentStatusMethod =
+              io.grpc.MethodDescriptor.<com.ecomm.grpc.payment.paymentStatusRequest, com.ecomm.grpc.payment.paymentStatusResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getPaymentStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ecomm.grpc.payment.paymentStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ecomm.grpc.payment.paymentStatusResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new PaymentServiceMethodDescriptorSupplier("getPaymentStatus"))
+              .build();
+        }
+      }
+    }
+    return getGetPaymentStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.ecomm.grpc.payment.refundRequest,
+      com.ecomm.grpc.payment.refundResponse> getRefundPaymentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "refundPayment",
+      requestType = com.ecomm.grpc.payment.refundRequest.class,
+      responseType = com.ecomm.grpc.payment.refundResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.ecomm.grpc.payment.refundRequest,
+      com.ecomm.grpc.payment.refundResponse> getRefundPaymentMethod() {
+    io.grpc.MethodDescriptor<com.ecomm.grpc.payment.refundRequest, com.ecomm.grpc.payment.refundResponse> getRefundPaymentMethod;
+    if ((getRefundPaymentMethod = PaymentServiceGrpc.getRefundPaymentMethod) == null) {
+      synchronized (PaymentServiceGrpc.class) {
+        if ((getRefundPaymentMethod = PaymentServiceGrpc.getRefundPaymentMethod) == null) {
+          PaymentServiceGrpc.getRefundPaymentMethod = getRefundPaymentMethod =
+              io.grpc.MethodDescriptor.<com.ecomm.grpc.payment.refundRequest, com.ecomm.grpc.payment.refundResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "refundPayment"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ecomm.grpc.payment.refundRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ecomm.grpc.payment.refundResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new PaymentServiceMethodDescriptorSupplier("refundPayment"))
+              .build();
+        }
+      }
+    }
+    return getRefundPaymentMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -100,6 +162,20 @@ public final class PaymentServiceGrpc {
         io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.paymentResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProcessPaymentMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getPaymentStatus(com.ecomm.grpc.payment.paymentStatusRequest request,
+        io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.paymentStatusResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPaymentStatusMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void refundPayment(com.ecomm.grpc.payment.refundRequest request,
+        io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.refundResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRefundPaymentMethod(), responseObserver);
+    }
   }
 
   /**
@@ -136,6 +212,22 @@ public final class PaymentServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getProcessPaymentMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getPaymentStatus(com.ecomm.grpc.payment.paymentStatusRequest request,
+        io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.paymentStatusResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPaymentStatusMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void refundPayment(com.ecomm.grpc.payment.refundRequest request,
+        io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.refundResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRefundPaymentMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -159,6 +251,20 @@ public final class PaymentServiceGrpc {
     public com.ecomm.grpc.payment.paymentResponse processPayment(com.ecomm.grpc.payment.paymentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getProcessPaymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.ecomm.grpc.payment.paymentStatusResponse getPaymentStatus(com.ecomm.grpc.payment.paymentStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPaymentStatusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.ecomm.grpc.payment.refundResponse refundPayment(com.ecomm.grpc.payment.refundRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRefundPaymentMethod(), getCallOptions(), request);
     }
   }
 
@@ -185,9 +291,27 @@ public final class PaymentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getProcessPaymentMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.ecomm.grpc.payment.paymentStatusResponse> getPaymentStatus(
+        com.ecomm.grpc.payment.paymentStatusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPaymentStatusMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.ecomm.grpc.payment.refundResponse> refundPayment(
+        com.ecomm.grpc.payment.refundRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRefundPaymentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PROCESS_PAYMENT = 0;
+  private static final int METHODID_GET_PAYMENT_STATUS = 1;
+  private static final int METHODID_REFUND_PAYMENT = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -209,6 +333,14 @@ public final class PaymentServiceGrpc {
         case METHODID_PROCESS_PAYMENT:
           serviceImpl.processPayment((com.ecomm.grpc.payment.paymentRequest) request,
               (io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.paymentResponse>) responseObserver);
+          break;
+        case METHODID_GET_PAYMENT_STATUS:
+          serviceImpl.getPaymentStatus((com.ecomm.grpc.payment.paymentStatusRequest) request,
+              (io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.paymentStatusResponse>) responseObserver);
+          break;
+        case METHODID_REFUND_PAYMENT:
+          serviceImpl.refundPayment((com.ecomm.grpc.payment.refundRequest) request,
+              (io.grpc.stub.StreamObserver<com.ecomm.grpc.payment.refundResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -235,6 +367,20 @@ public final class PaymentServiceGrpc {
               com.ecomm.grpc.payment.paymentRequest,
               com.ecomm.grpc.payment.paymentResponse>(
                 service, METHODID_PROCESS_PAYMENT)))
+        .addMethod(
+          getGetPaymentStatusMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.ecomm.grpc.payment.paymentStatusRequest,
+              com.ecomm.grpc.payment.paymentStatusResponse>(
+                service, METHODID_GET_PAYMENT_STATUS)))
+        .addMethod(
+          getRefundPaymentMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.ecomm.grpc.payment.refundRequest,
+              com.ecomm.grpc.payment.refundResponse>(
+                service, METHODID_REFUND_PAYMENT)))
         .build();
   }
 
@@ -284,6 +430,8 @@ public final class PaymentServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new PaymentServiceFileDescriptorSupplier())
               .addMethod(getProcessPaymentMethod())
+              .addMethod(getGetPaymentStatusMethod())
+              .addMethod(getRefundPaymentMethod())
               .build();
         }
       }

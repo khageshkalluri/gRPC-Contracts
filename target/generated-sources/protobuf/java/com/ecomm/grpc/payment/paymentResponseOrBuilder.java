@@ -25,4 +25,40 @@ public interface paymentResponseOrBuilder extends
    * @return The amount.
    */
   double getAmount();
+
+  /**
+   * <code>string status = 3;</code>
+   * @return The status.
+   */
+  java.lang.String getStatus();
+  /**
+   * <code>string status = 3;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
+
+  /**
+   * <code>string razor_pay_order_id = 4;</code>
+   * @return The razorPayOrderId.
+   */
+  java.lang.String getRazorPayOrderId();
+  /**
+   * <code>string razor_pay_order_id = 4;</code>
+   * @return The bytes for razorPayOrderId.
+   */
+  com.google.protobuf.ByteString
+      getRazorPayOrderIdBytes();
+
+  /**
+   * <code>string message = 5;</code>
+   * @return The message.
+   */
+  java.lang.String getMessage();
+  /**
+   * <code>string message = 5;</code>
+   * @return The bytes for message.
+   */
+  com.google.protobuf.ByteString
+      getMessageBytes();
 }

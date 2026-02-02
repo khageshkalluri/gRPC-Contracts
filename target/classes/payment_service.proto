@@ -8,14 +8,44 @@ option java_outer_classname="PaymentProto";
 
 service PaymentService{
   rpc processPayment(paymentRequest) returns (paymentResponse);
+  rpc getPaymentStatus(paymentStatusRequest) returns (paymentStatusResponse);
+  rpc refundPayment(refundRequest) returns (refundResponse);
 }
 
 message paymentRequest{
   string orderId=1;
   double amount=2;
+  string currency=3;
+  string customer_email=4;
+  string customer_phone=5;
 }
 
 message paymentResponse{
 string paymentId=1;
 double amount=2;
+string status=3;
+string razor_pay_order_id=4;
+string message=5;
+}
+
+message paymentStatusRequest{
+  string payment_id=1;
+}
+
+message paymentStatusResponse{
+  string payment_id = 1;
+  string status = 2;
+  double amount = 3;
+  string order_id = 4;
+}
+
+message refundRequest {
+  string payment_id = 1;
+  double amount = 2;
+}
+
+message refundResponse {
+  string refund_id = 1;
+  bool success = 2;
+  string message = 3;
 }

@@ -18,6 +18,9 @@ private static final long serialVersionUID = 0L;
   }
   private paymentResponse() {
     paymentId_ = "";
+    status_ = "";
+    razorPayOrderId_ = "";
+    message_ = "";
   }
 
   @java.lang.Override
@@ -90,6 +93,123 @@ private static final long serialVersionUID = 0L;
     return amount_;
   }
 
+  public static final int STATUS_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object status_ = "";
+  /**
+   * <code>string status = 3;</code>
+   * @return The status.
+   */
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string status = 3;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RAZOR_PAY_ORDER_ID_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object razorPayOrderId_ = "";
+  /**
+   * <code>string razor_pay_order_id = 4;</code>
+   * @return The razorPayOrderId.
+   */
+  @java.lang.Override
+  public java.lang.String getRazorPayOrderId() {
+    java.lang.Object ref = razorPayOrderId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      razorPayOrderId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string razor_pay_order_id = 4;</code>
+   * @return The bytes for razorPayOrderId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRazorPayOrderIdBytes() {
+    java.lang.Object ref = razorPayOrderId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      razorPayOrderId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MESSAGE_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
+  /**
+   * <code>string message = 5;</code>
+   * @return The message.
+   */
+  @java.lang.Override
+  public java.lang.String getMessage() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      message_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string message = 5;</code>
+   * @return The bytes for message.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMessageBytes() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      message_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -110,6 +230,15 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
       output.writeDouble(2, amount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(razorPayOrderId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, razorPayOrderId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -125,6 +254,15 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, amount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, status_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(razorPayOrderId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, razorPayOrderId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -146,6 +284,12 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToLongBits(getAmount())
         != java.lang.Double.doubleToLongBits(
             other.getAmount())) return false;
+    if (!getStatus()
+        .equals(other.getStatus())) return false;
+    if (!getRazorPayOrderId()
+        .equals(other.getRazorPayOrderId())) return false;
+    if (!getMessage()
+        .equals(other.getMessage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -162,6 +306,12 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getAmount()));
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + getStatus().hashCode();
+    hash = (37 * hash) + RAZOR_PAY_ORDER_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRazorPayOrderId().hashCode();
+    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -295,6 +445,9 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       paymentId_ = "";
       amount_ = 0D;
+      status_ = "";
+      razorPayOrderId_ = "";
+      message_ = "";
       return this;
     }
 
@@ -333,6 +486,15 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.amount_ = amount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.razorPayOrderId_ = razorPayOrderId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.message_ = message_;
       }
     }
 
@@ -388,6 +550,21 @@ private static final long serialVersionUID = 0L;
       if (other.getAmount() != 0D) {
         setAmount(other.getAmount());
       }
+      if (!other.getStatus().isEmpty()) {
+        status_ = other.status_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getRazorPayOrderId().isEmpty()) {
+        razorPayOrderId_ = other.razorPayOrderId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getMessage().isEmpty()) {
+        message_ = other.message_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -424,6 +601,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 17
+            case 26: {
+              status_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              razorPayOrderId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
+              message_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -541,6 +733,222 @@ private static final long serialVersionUID = 0L;
     public Builder clearAmount() {
       bitField0_ = (bitField0_ & ~0x00000002);
       amount_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object status_ = "";
+    /**
+     * <code>string status = 3;</code>
+     * @return The status.
+     */
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      status_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      status_ = getDefaultInstance().getStatus();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string status = 3;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      status_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object razorPayOrderId_ = "";
+    /**
+     * <code>string razor_pay_order_id = 4;</code>
+     * @return The razorPayOrderId.
+     */
+    public java.lang.String getRazorPayOrderId() {
+      java.lang.Object ref = razorPayOrderId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        razorPayOrderId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string razor_pay_order_id = 4;</code>
+     * @return The bytes for razorPayOrderId.
+     */
+    public com.google.protobuf.ByteString
+        getRazorPayOrderIdBytes() {
+      java.lang.Object ref = razorPayOrderId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        razorPayOrderId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string razor_pay_order_id = 4;</code>
+     * @param value The razorPayOrderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRazorPayOrderId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      razorPayOrderId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string razor_pay_order_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRazorPayOrderId() {
+      razorPayOrderId_ = getDefaultInstance().getRazorPayOrderId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string razor_pay_order_id = 4;</code>
+     * @param value The bytes for razorPayOrderId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRazorPayOrderIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      razorPayOrderId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object message_ = "";
+    /**
+     * <code>string message = 5;</code>
+     * @return The message.
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string message = 5;</code>
+     * @return The bytes for message.
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string message = 5;</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessage(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      message_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessage() {
+      message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string message = 5;</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      message_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

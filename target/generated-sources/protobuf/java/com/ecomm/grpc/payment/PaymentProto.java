@@ -25,6 +25,26 @@ public final class PaymentProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_payment_paymentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_paymentStatusRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_paymentStatusRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_paymentStatusResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_paymentStatusResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_refundRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_refundRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_payment_refundResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_payment_refundResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -34,13 +54,27 @@ public final class PaymentProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025payment_service.proto\022\007payment\"1\n\016paym" +
+      "\n\025payment_service.proto\022\007payment\"s\n\016paym" +
       "entRequest\022\017\n\007orderId\030\001 \001(\t\022\016\n\006amount\030\002 " +
-      "\001(\001\"4\n\017paymentResponse\022\021\n\tpaymentId\030\001 \001(" +
-      "\t\022\016\n\006amount\030\002 \001(\0012U\n\016PaymentService\022C\n\016p" +
-      "rocessPayment\022\027.payment.paymentRequest\032\030" +
-      ".payment.paymentResponseB(\n\026com.ecomm.gr" +
-      "pc.paymentB\014PaymentProtoP\001b\006proto3"
+      "\001(\001\022\020\n\010currency\030\003 \001(\t\022\026\n\016customer_email\030" +
+      "\004 \001(\t\022\026\n\016customer_phone\030\005 \001(\t\"q\n\017payment" +
+      "Response\022\021\n\tpaymentId\030\001 \001(\t\022\016\n\006amount\030\002 " +
+      "\001(\001\022\016\n\006status\030\003 \001(\t\022\032\n\022razor_pay_order_i" +
+      "d\030\004 \001(\t\022\017\n\007message\030\005 \001(\t\"*\n\024paymentStatu" +
+      "sRequest\022\022\n\npayment_id\030\001 \001(\t\"]\n\025paymentS" +
+      "tatusResponse\022\022\n\npayment_id\030\001 \001(\t\022\016\n\006sta" +
+      "tus\030\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\020\n\010order_id\030\004 " +
+      "\001(\t\"3\n\rrefundRequest\022\022\n\npayment_id\030\001 \001(\t" +
+      "\022\016\n\006amount\030\002 \001(\001\"E\n\016refundResponse\022\021\n\tre" +
+      "fund_id\030\001 \001(\t\022\017\n\007success\030\002 \001(\010\022\017\n\007messag" +
+      "e\030\003 \001(\t2\352\001\n\016PaymentService\022C\n\016processPay" +
+      "ment\022\027.payment.paymentRequest\032\030.payment." +
+      "paymentResponse\022Q\n\020getPaymentStatus\022\035.pa" +
+      "yment.paymentStatusRequest\032\036.payment.pay" +
+      "mentStatusResponse\022@\n\rrefundPayment\022\026.pa" +
+      "yment.refundRequest\032\027.payment.refundResp" +
+      "onseB(\n\026com.ecomm.grpc.paymentB\014PaymentP" +
+      "rotoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -51,13 +85,37 @@ public final class PaymentProto {
     internal_static_payment_paymentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_paymentRequest_descriptor,
-        new java.lang.String[] { "OrderId", "Amount", });
+        new java.lang.String[] { "OrderId", "Amount", "Currency", "CustomerEmail", "CustomerPhone", });
     internal_static_payment_paymentResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_payment_paymentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_payment_paymentResponse_descriptor,
+        new java.lang.String[] { "PaymentId", "Amount", "Status", "RazorPayOrderId", "Message", });
+    internal_static_payment_paymentStatusRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_payment_paymentStatusRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_paymentStatusRequest_descriptor,
+        new java.lang.String[] { "PaymentId", });
+    internal_static_payment_paymentStatusResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_payment_paymentStatusResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_paymentStatusResponse_descriptor,
+        new java.lang.String[] { "PaymentId", "Status", "Amount", "OrderId", });
+    internal_static_payment_refundRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_payment_refundRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_refundRequest_descriptor,
         new java.lang.String[] { "PaymentId", "Amount", });
+    internal_static_payment_refundResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_payment_refundResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_payment_refundResponse_descriptor,
+        new java.lang.String[] { "RefundId", "Success", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

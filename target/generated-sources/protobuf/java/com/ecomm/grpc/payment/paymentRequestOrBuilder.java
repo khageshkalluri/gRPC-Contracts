@@ -25,4 +25,40 @@ public interface paymentRequestOrBuilder extends
    * @return The amount.
    */
   double getAmount();
+
+  /**
+   * <code>string currency = 3;</code>
+   * @return The currency.
+   */
+  java.lang.String getCurrency();
+  /**
+   * <code>string currency = 3;</code>
+   * @return The bytes for currency.
+   */
+  com.google.protobuf.ByteString
+      getCurrencyBytes();
+
+  /**
+   * <code>string customer_email = 4;</code>
+   * @return The customerEmail.
+   */
+  java.lang.String getCustomerEmail();
+  /**
+   * <code>string customer_email = 4;</code>
+   * @return The bytes for customerEmail.
+   */
+  com.google.protobuf.ByteString
+      getCustomerEmailBytes();
+
+  /**
+   * <code>string customer_phone = 5;</code>
+   * @return The customerPhone.
+   */
+  java.lang.String getCustomerPhone();
+  /**
+   * <code>string customer_phone = 5;</code>
+   * @return The bytes for customerPhone.
+   */
+  com.google.protobuf.ByteString
+      getCustomerPhoneBytes();
 }
