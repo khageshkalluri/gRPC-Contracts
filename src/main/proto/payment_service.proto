@@ -13,6 +13,22 @@ service PaymentService{
   rpc refundPayment(refundRequest) returns (refundResponse);
 }
 
+service ProductService{
+  rpc productInventory(productRequest) returns (productResponse);
+}
+
+message productRequest{
+ string productId=1;
+ double price=2;
+ uint64 quantity=3;
+}
+
+message productResponse{
+  string productId=1;
+  uint64 quantity=2;
+  bool availability=3;
+}
+
 message paymentRequest{
   string orderId=1;
   double amount=2;
